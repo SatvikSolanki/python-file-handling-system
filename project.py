@@ -94,6 +94,6 @@ while True:
     if option == 3:
         update_file()
     if option == 4:
-        delete_file
+        delete_file()
     if option == 0:
         break
