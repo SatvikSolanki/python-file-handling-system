@@ -78,12 +78,57 @@ def delete_file():
         print("FILE DELETED!")
     else:
         print("File does not exist")
+def rename_file():
+    readfileandfolder()
+    file_name = ("Enter name of your file: ")
+    p = Path(file_name)
+    if p.exists():
+        new_name = input("Enter new name of the file: ")
+        p.rename(new_name)
+        print("File name changed")
+
+def create_folder():
+    readfileandfolder()
+    folder_name = input("Enter name of your folder: ")
+    p = Path(folder_name)
+    if p.exists():
+        print("Folder already exists!")
+    else:
+        os.mkdir(folder_name)
+        print("Folder Created!")
+
+def delete_folder():
+    readfileandfolder
+    folder_name = input("Enter folder name: ")
+    p = Path(folder_name)
+    if p.exists():
+        p.rmdir()
+        print("File Deleted!")
+    else:
+        print("Folder does not exist")
+
+def file_in_folder():
+    readfileandfolder()
+    folder_name = input("Enter name of your folder: ")
+    file_name = input("Enter name of your file: ")
+    p = Path(folder_name) / file_name
+    if p.exists():
+        print("FILE ALREADY EXISTS!!")
+    else:
+        with open(p,'w') as file:
+            content = input('Enter your file content: ') 
+            file.write(content)
+            print('File added!')
 
 while True:
     print("Press 1 for creating a file")
     print("Press 2 for reading a file")
     print("Press 3 for updating a file")
     print("Press 4 for deleting a file")
+    print("Press 5 for renaming file")
+    print("Press 6 for creating a folder")
+    print("Press 7 for deleting a folder")
+    print("Press 8 to create file in folder")
     print("Press 0 for exiting")
     
     option = int(input("Enter your choice: "))
@@ -95,5 +140,13 @@ while True:
         update_file()
     if option == 4:
         delete_file()
+    if option == 5:
+        rename_file()
+    if option == 6:
+        create_folder()
+    if option == 7:
+        delete_folder()
+    if option == 8:
+        file_in_folder()
     if option == 0:
         break
