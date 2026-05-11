@@ -10,7 +10,10 @@ A simple menu-driven file handling system built using Python.
 - Update files
 - Delete files
 - Exception handling
-
+- Create Folder
+- Rename File
+- Delete Folder
+- Create file in folder
 ## Technologies Used
 - Python
 - pathlib
